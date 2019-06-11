@@ -11,8 +11,16 @@ public class TratamientoPedidoInternacional implements TratamientoPedido {
         this.pedidoInternacional = pedidoInternacional;
     }
 
+    private PedidoInternacional getPedidoInternacional() {
+        return this.pedidoInternacional;
+    }
+
     @Override
     public boolean tratar() {
-        return false;
+        if (getPedidoInternacional().destino().equals("Mordor")) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
