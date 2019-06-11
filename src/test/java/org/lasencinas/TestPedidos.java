@@ -15,7 +15,10 @@ import org.lasencinas.pedidos.PedidoPeligroso;
 import org.lasencinas.pedidos.PedidoPeligrosoOrden;
 import org.lasencinas.procesadores.Oficina;
 import org.lasencinas.tratamientos.TratamientoPedidoInternacional;
+import org.lasencinas.tratamientos.TratamientoPedidoMultiple;
 import org.lasencinas.tratamientos.TratamientoPedidoPeligroso;
+
+import java.util.ArrayList;
 
 /**
  * NO PUEDES MODIFICAR EL CODIGO DE LOS CASOS TEST
@@ -177,60 +180,68 @@ public class TestPedidos {
 
     }
 
-//    /**
-//     * Crea una clase TratamientoPedidoMultiple que permita tratar
-//     * pedidos multiples.
-//     *
-//     * La clase permite tratar el pedido multiple si
-//     * el peso total de los pedidos es mayor que 0
-//     * y
-//     * el numero de bultos coincide con el numero de
-//     * pedidos individuales que forman el pedido multiple.
-//     *
-//     * Crea las clases necesarias que se requieren en los casos test
-//     * respetando los constructores que se exigen.
-//     */
-//
-//    @Test
-//    public void test_tratamiento_pedido_multiple_tratar() {
-//
-//        /**
-//         * Crea una colección de tres pedidos nacionales,
-//         * a "Gondor", "Minas Tirith", "Rohan"
-//         * con un peso de 10 cada uno.
-//         *
-//         * Pasasela a TratamientoPedidosMultiple en su constructor.
-//         */
-//
-//        // Coleccion pedidos
-//        assertTrue(pedidos.size() == 3);
-//
-//        TratamientoPedidoMultiple pedidosMult = new TratamientoPedidoMultiple(pedidos);
-//        assertNotNull(pedidosMult);
-//
-//        /**
-//         * Completa los metodos del pedido multiple.
-//         * Se valorara el uso de streams.
-//         *
-//         * calcularTotalBultos
-//         * @param   void
-//         * @return  void
-//         *
-//         * calcularPesoTotal
-//         * @param   void
-//         * @return  void
-//         *
-//         */
-//
-//        pedidosMult.calcularTotalBultos();
-//        assertEquals(3, pedidosMult.getNumBultos(), 0);
-//
-//        pedidosMult.calcularPesoTotal();
-//        assertEquals(30, pedidosMult.getPesoTotal(), 0);
-//
-//        /**
-//         * Trata el pedido multiple.
-//         */
-//        assertTrue(pedidosMult.tratar());
-//    }
+    /**
+     * Crea una clase TratamientoPedidoMultiple que permita tratar
+     * pedidos multiples.
+     *
+     * La clase permite tratar el pedido multiple si
+     * el peso total de los pedidos es mayor que 0
+     * y
+     * el numero de bultos coincide con el numero de
+     * pedidos individuales que forman el pedido multiple.
+     *
+     * Crea las clases necesarias que se requieren en los casos test
+     * respetando los constructores que se exigen.
+     */
+
+    @Test
+    public void test_tratamiento_pedido_multiple_tratar() {
+
+        /**
+         * Crea una colección de tres pedidos nacionales,
+         * a "Gondor", "Minas Tirith", "Rohan"
+         * con un peso de 10 cada uno.
+         *
+         * Pasasela a TratamientoPedidosMultiple en su constructor.
+         */
+
+        // Coleccion pedidos
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+        String[] destinos = {"Mordor", "Minas Tirith", "Rohan"};
+
+        for(int i=0; i < destinos.length;i++){
+            pedidos.add(new PedidoNacional(destinos[i],10));
+        }
+
+
+        assertTrue(pedidos.size() == 3);
+
+        TratamientoPedidoMultiple pedidosMult = new TratamientoPedidoMultiple(pedidos);
+        assertNotNull(pedidosMult);
+
+        /**
+         * Completa los metodos del pedido multiple.
+         * Se valorara el uso de streams.
+         *
+         * calcularTotalBultos
+         * @param   void
+         * @return  void
+         *
+         * calcularPesoTotal
+         * @param   void
+         * @return  void
+         *
+         */
+
+        pedidosMult.calcularTotalBultos();
+        assertEquals(3, pedidosMult.getNumBultos(), 0);
+
+        pedidosMult.calcularPesoTotal();
+        assertEquals(30, pedidosMult.getPesoTotal(), 0);
+
+        /**
+         * Trata el pedido multiple.
+         */
+        assertTrue(pedidosMult.tratar());
+    }
 }
