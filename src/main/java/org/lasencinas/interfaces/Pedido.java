@@ -14,7 +14,7 @@ package org.lasencinas.interfaces;
 
 public interface Pedido {
 
-    public int peso();
-    public String destino();
+    int peso();
+    String destino();
 
 }

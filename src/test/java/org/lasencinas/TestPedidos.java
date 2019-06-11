@@ -8,6 +8,8 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.lasencinas.interfaces.Pedido;
 import org.lasencinas.interfaces.TratamientoPedido;
+import org.lasencinas.pedidos.PedidoInternacional;
+import org.lasencinas.tratamientos.TratamientoPedidoInternacional;
 
 /**
  * NO PUEDES MODIFICAR EL CODIGO DE LOS CASOS TEST

@@ -12,6 +12,6 @@ package org.lasencinas.interfaces;
 
 public interface Procesador {
 
-    //public boolean procesa(TratamientoPedido pedido);
+    public boolean procesa(TratamientoPedido pedido);
 
 }
