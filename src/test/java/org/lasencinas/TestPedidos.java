@@ -76,19 +76,19 @@ public class TestPedidos {
         assertNotNull(tratamientoKO);
         assertFalse(tratamientoKO.tratar());
     }
-//
-//    @Test
-//    public void test_pedido_peligroso_OK() {
-//
-//        Pedido pedidoConPeligro = new PedidoPeligrosoOrden("Cima de los vientos",
-//                "no limpiarse las uñas con este puñal");
-//        assertEquals("Cima de los vientos", pedidoConPeligro.destino());
-//
-//        TratamientoPedido tratamientoOK = new TratamientoPedidoPeligroso(
-//                (PedidoPeligroso) pedidoConPeligro);
-//        assertTrue(tratamientoOK.tratar());
-//    }
-//
+
+    @Test
+    public void test_pedido_peligroso_OK() {
+
+        Pedido pedidoConPeligro = new PedidoPeligrosoOrden("Cima de los vientos",
+                "no limpiarse las uñas con este puñal");
+        assertEquals("Cima de los vientos", pedidoConPeligro.destino());
+
+        TratamientoPedido tratamientoOK = new TratamientoPedidoPeligroso(
+                (PedidoPeligroso) pedidoConPeligro);
+        assertTrue(tratamientoOK.tratar());
+    }
+
 //    /**
 //     * Añade a las clases PedidoInternacional y PedidoPeligrosoOrden
 //     * una identificador Id de tipo String
