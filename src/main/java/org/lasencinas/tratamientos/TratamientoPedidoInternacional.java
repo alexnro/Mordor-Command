@@ -11,7 +11,7 @@ public class TratamientoPedidoInternacional implements TratamientoPedido {
         this.pedidoInternacional = pedidoInternacional;
     }
 
-    private PedidoInternacional getPedidoInternacional() {
+    public PedidoInternacional getPedidoInternacional() {
         return this.pedidoInternacional;
     }
 
